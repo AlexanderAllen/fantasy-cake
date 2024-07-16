@@ -4,17 +4,20 @@ declare(strict_types=1);
 
 namespace Widmogrod\Common;
 
+/**
+ * @template a
+ */
 trait PointedTrait
 {
     /**
-     * @var mixed
+     * @var a
      */
     protected $value;
 
     /**
      * Ensure everything on start.
      *
-     * @param mixed $value
+     * @param a $value
      */
     public function __construct($value)
     {
@@ -22,7 +25,9 @@ trait PointedTrait
     }
 
     /**
-     * @inheritdoc
+     * @template b
+     * @param b $value
+     * @return static<b>
      */
     public static function of($value)
     {
